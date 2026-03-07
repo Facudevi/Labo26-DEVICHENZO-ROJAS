@@ -14,10 +14,6 @@ struct Producto {
 
 int columnaMayor(){}
 
-
-
-
-
 int main (void){
     vector <Producto> gondola;
     Producto prod1;
@@ -69,11 +65,11 @@ int main (void){
     prod6.precio = 30;
     prod6.fechaVenc = true;
 
-    prod7.nombre = "Queso";
-    prod7.codBarra = "";
-    prod7.marca = "";
-    prod7.precio = ;
-    prod7.fechaVenc = ;
+    prod7.nombre = "Masa de Empanada";
+    prod7.codBarra = "5555-5556";
+    prod7.marca = "Pagliac";
+    prod7.precio = 35;
+    prod7.fechaVenc = false;
 
     prod8.nombre = "Queso";
     prod8.codBarra = "";
