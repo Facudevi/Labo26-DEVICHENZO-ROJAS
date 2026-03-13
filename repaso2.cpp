@@ -155,6 +155,6 @@ int main (void){
     cout << "Producto fila->2, columan->3: " << buscarProducto(gondola) << endl;
     cout << "Promedio de todos los productos: " << promedio(gondola) << endl;
     cout << "Cantidad de productos con fecha de vencimiento: " << vencimiento(gondola) << endl;
-
+    
 
 }
