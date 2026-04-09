@@ -1,13 +1,11 @@
 package Unidad_1;
 
-
 public class Circulo {
     private float radio;
 
     public Circulo(){
         this.radio = 3;
     }
-
     public Circulo(float radio){
         this.radio = radio;
     }
@@ -45,7 +43,5 @@ public class Circulo {
         area = circulo2.obtenerArea();
         perimetro = circulo2.obtenerPerimetro();
         System.out.println("El area del circulo 2 es " + area + " y el perimetro es " + perimetro);
-
     }
-
 }
