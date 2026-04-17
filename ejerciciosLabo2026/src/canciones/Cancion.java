@@ -1,4 +1,4 @@
-package Canciones;
+package canciones;
 import persona.Persona;
 
 public class Cancion {

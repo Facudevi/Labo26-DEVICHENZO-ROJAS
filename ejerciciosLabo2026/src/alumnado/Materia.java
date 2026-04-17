@@ -1,15 +1,14 @@
-package Alumnado;
+package alumnado;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Materia {
-
     private String nombre;
     private ArrayList <String> contenidos;
-    private int inscriptos;
+    private ArrayList <Alumno> inscriptos;
 
-
-    public Materia(String nombre){
+    public Materia(String nombre, ArrayList<String> contenidos, ArrayList<Alumno> inscriptos){
         this.nombre = nombre;
         this.contenidos = contenidos;
         this.inscriptos = inscriptos;
@@ -21,7 +20,7 @@ public class Materia {
     public ArrayList<String> getContenidos() {
         return contenidos;
     }
-    public int getInscriptos() {
+    public ArrayList<Alumno> getInscriptos() {
         return inscriptos;
     }
 
@@ -31,7 +30,20 @@ public class Materia {
     public void setContenidos(ArrayList<String> contenidos) {
         this.contenidos = contenidos;
     }
-    public void setInscriptos(int inscriptos) {
+    public void setInscriptos(ArrayList<Alumno> inscriptos) {
         this.inscriptos = inscriptos;
     }
+
+    public float edadMateria(){
+        float prom;
+        int cont = 0;
+        int suma = 0;
+        for (Alumno edadAlumno : inscriptos){
+            suma += (LocalDate.now().getYear() - edadAlumno.getFecha().getYear());
+            cont ++;
+        }
+        prom = suma / cont;
+        return prom;
+    }
+    
 }

@@ -1,4 +1,4 @@
-package Alumnado;
+package alumnado;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -6,12 +6,14 @@ public class Alumno {
     private String nombre, apellido;
     private LocalDate fecha;
     private ArrayList<Float> listaNotas;
+    private ArrayList<Materia> listaMaterias;
 
-    public Alumno() {
+    public Alumno(String nombre, String apellido, LocalDate fecha, ArrayList<Float> listaNotas, ArrayList<Materia> listaMaterias) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha = fecha;
         this.listaNotas = listaNotas;
+        this.listaMaterias = listaMaterias;
     }
 
     public String getNombre() {
@@ -45,7 +47,11 @@ public class Alumno {
     }
 
     public float MenorNota(){
-        float notaMenor= 10;                       // = this.listaNotas.get(0);
+        if(listaNotas.isEmpty()){
+            return 0;
+        }
+
+        float notaMenor = this.listaNotas.get(0);
         for (float menor : this.listaNotas){
             if (menor > notaMenor){
                 notaMenor = menor;
@@ -55,7 +61,11 @@ public class Alumno {
     }
 
     public float MayorNota(){
-        float notaMayor = 0;
+        if(listaNotas.isEmpty()){
+            return 0;
+        }
+
+        float notaMayor = this.listaNotas.get(0);
         for (float mayor : this.listaNotas){
             if (mayor > notaMayor){
                 notaMayor = mayor;
@@ -63,4 +73,23 @@ public class Alumno {
         }
         return notaMayor;
     }
+
+    public void AgregarMateria(Materia nuevaMateria){
+        this.listaMaterias.add(nuevaMateria);
+    }
+
+    public float PromedioNota(Alumno alumno){
+        if(listaNotas.isEmpty()){
+            return 0;
+        }
+
+        int sum = 0;
+        int cont = 0;
+        for (float nota : alumno.listaNotas){
+            sum += nota;
+            cont ++;
+        }
+        return (sum / cont);
+    }
+
 }

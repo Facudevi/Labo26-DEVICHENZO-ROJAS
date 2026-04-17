@@ -1,7 +1,6 @@
 package canciones;
 
 import java.util.ArrayList;
-import Canciones.Cancion;
 
 public class CD {
     private ArrayList<Cancion> cancion;
