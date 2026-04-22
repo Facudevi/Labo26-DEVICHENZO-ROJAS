@@ -1,4 +1,4 @@
-package EjerciciosArray;
+package ejerciciosArray;
 
 import persona.Persona;
 

@@ -55,7 +55,7 @@ public class Alumno {
 
         float notaMenor = this.listaNotas.get(0);
         for (float menor : this.listaNotas){
-            if (menor > notaMenor){
+            if (menor < notaMenor){
                 notaMenor = menor;
             }
         }
@@ -93,5 +93,4 @@ public class Alumno {
         }
         return (sum / cont);
     }
-
 }
