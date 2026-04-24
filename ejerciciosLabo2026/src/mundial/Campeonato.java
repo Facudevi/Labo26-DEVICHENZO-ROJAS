@@ -22,34 +22,26 @@ public class Campeonato {
     }
 
     public String mismoTurno(Equipo equipo1, Equipo equipo2) {
-
-
-
-
+        String t = "";
+        if (equipo1.getTurno().contains("Mañana") && equipo2.getTurno().contains("Mañana")){
+            t = "Mañana";
+        }
+        else if (equipo1.getTurno().contains("Tarde") && equipo2.getTurno().contains("Tarde")) {
+            t = "Tarde";
+        }
+        else if (equipo1.getTurno().contains("Noche") && equipo2.getTurno().contains("Noche")){
+            t = "Noche";
+        }
+        return t;
     }
 
     public void fixture(){
         for (Equipo e1 : listaEquipo){
-            for (Equipo e2 : listaEquipo)
+            for (Equipo e2 : listaEquipo){
                 if (validar(e1, e2)) {
-                    partidos.add(new Partido(e1, e2, mismoTurno(e1,e2)))
+                    partidos.add(new Partido(e1, e2, mismoTurno(e1,e2)));
                 }
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
