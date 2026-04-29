@@ -1,12 +1,12 @@
-package submarino;
+package vehiculos;
 import java.util.Scanner;
 
-public class Submarino2 {
+public class Submarino {
     private String nombre;
     private int profMax;
     private int profundidad;
 
-    public Submarino2(String nombre, int profMax, int profundidad){
+    public Submarino(String nombre, int profMax, int profundidad){
         this.nombre = nombre;
         this.profMax = profMax;
         this.profundidad = profundidad;
@@ -60,5 +60,31 @@ public class Submarino2 {
             setProfundidad(profundidad + bajar);
             System.out.println("Su profundidad actual es: " + profundidad + "\n--------------------");
         }
+    }
+
+    public static void main(String[] args){
+        int opcion;
+        Submarino submarino = new Submarino("ClearWater", 200, 0);
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Hola, bienvenido al submarino (profundidad maxima " + submarino.getProfMax() + ")...");
+        do{
+            System.out.println("Elija que quiere hacer:\n 1- Emerger\n 2- Sumergir\n 3- Salir\n Opción:");
+            opcion = input.nextInt();
+            while (opcion < 1 || opcion > 3) {
+                System.out.println("Reingresar una opcion correcta: ");
+                opcion = input.nextInt();
+            }
+
+            switch (opcion){
+                case 1:
+                    submarino.emerger();
+                    break;
+                case 2:
+                    submarino.sumergir();
+                    break;
+            }
+        } while (opcion != 3);
+        System.out.println("Ha salido del submarino. Nos vemos!");
     }
 }

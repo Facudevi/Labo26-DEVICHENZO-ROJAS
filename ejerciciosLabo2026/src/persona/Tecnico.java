@@ -1,25 +1,23 @@
-package cohete;
+package persona;
+import vehiculos.Cohete;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class Tecnico {
-    private String nombre;
-    private String apellido;
-    private LocalDate fecha;
+public class Tecnico extends PersonaP{
     private String especialidad;
     private Cohete coheteAsig;
 
-    public Tecnico (String nombre, String apellido, LocalDate fecha, String especialidad, Cohete coheteAsig){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fecha = fecha;
+    public Tecnico(String nombre, String apellido, LocalDate fecha, String direccion, String especialidad, Cohete coheteAsig) {
+        super(nombre, apellido, fecha, direccion);
         this.especialidad = especialidad;
         this.coheteAsig = coheteAsig;
     }
 
-    public void setCoheteAsig(Cohete coheteAsig){
-        this.coheteAsig = coheteAsig;
-    }
+    public String getEspecialidad() {return especialidad;}
+    public Cohete getCoheteAsig() {return coheteAsig;}
+
+    public void setEspecialidad(String especialidad) {this.especialidad = especialidad;}
+    public void setCoheteAsig(Cohete coheteAsig) {this.coheteAsig = coheteAsig;}
 
     public void tecActivar(){
         int cantidad;

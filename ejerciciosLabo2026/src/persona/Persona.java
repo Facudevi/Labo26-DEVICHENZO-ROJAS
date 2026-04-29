@@ -39,7 +39,6 @@ public class Persona {
 
     public static void main(String[] args){
         Persona persona1 = new Persona("Camila", 28, "Superi 2001");
-
         persona1.imprimirDatos();
     }
 }

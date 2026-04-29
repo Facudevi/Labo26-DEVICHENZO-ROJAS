@@ -1,23 +1,18 @@
-package museo;
-
+package persona;
+import objetos.Cuadro;
 import java.time.LocalDate;
 
-public class Restaurador1 {
-    private String nombre;
-    private String apellido;
+public class Restaurador extends PersonaP{
     private long dni;
-    private LocalDate fechaN;
     private int experiencia;
 
-    public Restaurador1(String nombre, String apellido, long dni, LocalDate fechaN, int experiencia){
-        this.nombre = nombre;
-        this.apellido = apellido;
+    public Restaurador(String nombre, String apellido, LocalDate fecha, String direccion, long dni, int experiencia) {
+        super(nombre, apellido, fecha, direccion);
         this.dni = dni;
-        this.fechaN = fechaN;
         this.experiencia = experiencia;
     }
 
-    public String restaurar(Cuadro1 obra){
+    public String restaurar(Cuadro obra){
         int estadoInicial = obra.getEstado();
         int anioActual = LocalDate.now().getYear();
         int antiguedad = anioActual - obra.getAnio();
@@ -33,7 +28,7 @@ public class Restaurador1 {
         int estadoNuevo = Math.min(estadoInicial + mejora, 10);
         obra.setEstado(estadoNuevo);
 
-        return "Restauracion completada por " + nombre + " " + apellido + ":\n" +
+        return "Restauracion completada por " + super.getNombre() + " " + super.getApellido() + ":\n" +
                 "Obra: '" + obra.getTitulo() + "'\n" +
                 "Estado anterior: " + estadoInicial + "/10\n" +
                 "Estado actual: " + estadoNuevo + "/10\n";
