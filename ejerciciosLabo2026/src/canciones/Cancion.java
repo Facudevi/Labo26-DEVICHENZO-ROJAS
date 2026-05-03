@@ -1,15 +1,17 @@
 package canciones;
 import persona.Persona;
 
+import java.time.LocalDate;
+
 public class Cancion {
     private Persona autor;
     private String titulo;
 
     public  Cancion(){
         this.titulo = "";
-        this.autor = new Persona("",20,"");
+        this.autor = new Persona("","", LocalDate.now(), "");
     }
-    public  Cancion(String titulo,Persona autor){
+    public  Cancion(String titulo, Persona autor){
         this.titulo = titulo;
         this.autor = autor;
     }

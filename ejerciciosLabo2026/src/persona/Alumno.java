@@ -3,7 +3,7 @@ import colegio.Materia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Alumno extends PersonaP{
+public class Alumno extends Persona {
     private ArrayList<Float> listaNotas;
     private ArrayList<Materia> listaMaterias;
 

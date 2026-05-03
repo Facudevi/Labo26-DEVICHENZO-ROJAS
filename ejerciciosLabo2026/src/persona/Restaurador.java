@@ -2,7 +2,7 @@ package persona;
 import objetos.Cuadro;
 import java.time.LocalDate;
 
-public class Restaurador extends PersonaP{
+public class Restaurador extends Persona {
     private long dni;
     private int experiencia;
 

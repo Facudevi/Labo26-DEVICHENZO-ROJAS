@@ -3,7 +3,7 @@ import vehiculos.Cohete;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class Tecnico extends PersonaP{
+public class Tecnico extends Persona {
     private String especialidad;
     private Cohete coheteAsig;
 

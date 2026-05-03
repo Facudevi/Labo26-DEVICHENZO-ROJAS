@@ -27,7 +27,7 @@ public class Materia {
         int cont = 0;
         int suma = 0;
         for (Alumno edadAlumno : inscriptos){
-            suma += (LocalDate.now().getYear() - edadAlumno.getFecha().getYear());
+            suma += edadAlumno.calcularEdad();
             cont ++;
         }
 

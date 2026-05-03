@@ -1,6 +1,8 @@
 package objetos;
-import persona.Persona;
 import fecha.Fecha;
+import persona.Persona;
+
+import java.time.LocalDate;
 
 public class Libro {
     private String nombre;
@@ -9,14 +11,14 @@ public class Libro {
     private  int cantidadHojas;
     private Fecha fechaPublicacion;
 
-    public  Libro(String nombre,Persona autor,String isbn,int cantidadHojas,Fecha fechaPublicacion){
+    public  Libro(String nombre, Persona autor, String isbn, int cantidadHojas, Fecha fechaPublicacion){
         this.nombre = nombre;
         this.autor = autor;
         this.isbn = isbn;
         this.cantidadHojas = cantidadHojas;
         this.fechaPublicacion = fechaPublicacion;
     }
-    public  Libro(Persona autor,String isbn,int cantidadHojas,Fecha fechaPublicacion){
+    public  Libro(Persona autor, String isbn, int cantidadHojas, Fecha fechaPublicacion){
         this.nombre = "las aventuras de pepe";
         this.autor = autor;
         this.isbn = isbn;
@@ -25,7 +27,7 @@ public class Libro {
     }
     public  Libro(String isbn,int cantidadHojas,Fecha fechaPublicacion){
         this.nombre = "las aventuras de pepe";
-        this.autor = new Persona("pepe",19,"Bolivia 3555");
+        this.autor = new Persona("pepe","sanchez", LocalDate.of(1998, 4, 19),"Bolivia 3555");
         this.isbn = isbn;
         this.cantidadHojas = cantidadHojas;
         this.fechaPublicacion = fechaPublicacion;

@@ -1,7 +1,7 @@
 package persona;
 import java.time.LocalDate;
 
-public class Jugador extends PersonaP{
+public class Jugador extends Persona {
     private  int nCamiseta;
 
     public Jugador(String nombre, String apellido, LocalDate fecha, String direccion, int nCamiseta) {
