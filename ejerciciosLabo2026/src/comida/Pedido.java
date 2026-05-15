@@ -1,6 +1,5 @@
 package comida;
-import persona.Persona;
-import persona.Profesor;
+import persona.PersonaEducativa;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -8,11 +7,11 @@ import java.time.LocalTime;
 public class Pedido {
     private LocalDate fecha;
     private Plato plato;
-    private Persona persona;
+    private PersonaEducativa persona;
     private LocalTime horaEntrega;
     private boolean entregado;
 
-    public Pedido(LocalDate fecha, Plato plato, Persona persona, LocalTime horaEntrega, boolean entregado) {
+    public Pedido(LocalDate fecha, Plato plato, PersonaEducativa persona, LocalTime horaEntrega, boolean entregado) {
         this.fecha = fecha;
         this.plato = plato;
         this.persona = persona;
@@ -20,25 +19,17 @@ public class Pedido {
         this.entregado = entregado;
     }
 
-    public double calcularDescuento(Profesor profesor){
+    public double calcularDescuento(){
         double precioBase = plato.getPrecio();
-        double descuento = (precioBase * profesor.getPorcentajeDesc()) / 100;
+        double descuento = (precioBase * persona.getDescuento()) / 100;
         return precioBase - descuento;
     }
 
     public double calcularPrecioFinal(){
         double pFinal;
-        if(persona instanceof Profesor){
-            Profesor prof = (Profesor) persona;
-            pFinal = calcularDescuento(prof);
-        }
-        else{
-            pFinal = plato.getPrecio();
-        }
-
+        pFinal = calcularDescuento();
         return pFinal;
     }
-
 
     public LocalDate getFecha() {
         return fecha;
@@ -46,7 +37,7 @@ public class Pedido {
     public Plato getPlato() {
         return plato;
     }
-    public Persona getPersona() {
+    public PersonaEducativa getPersonaEducativa() {
         return persona;
     }
     public LocalTime getHoraEntrega() {
@@ -62,7 +53,7 @@ public class Pedido {
     public void setPlato(Plato plato) {
         this.plato = plato;
     }
-    public void setPersona(Persona persona) {
+    public void setPersonaEducativa(PersonaEducativa persona) {
         this.persona = persona;
     }
     public void setHoraEntrega(LocalTime horaEntrega) {

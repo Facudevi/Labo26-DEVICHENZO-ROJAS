@@ -35,7 +35,7 @@ public class Buffet {
 
     public boolean buscarPlato(Plato pl){
         for (Plato plato : menu){
-            if (plato.getNombre().equals(pl.getNombre())){
+            if (plato.equals(pl)){
                 return true;
             }
         }
@@ -96,7 +96,7 @@ public class Buffet {
         System.out.println("Fecha: " + fecha);
         for (Pedido p : pedido){
             if(p.getFecha().equals(fecha)){
-                System.out.println("Plato a cocinar: " + p.getPlato().getNombre() + " | Para: " + p.getPersona().getNombre() + " " + p.getPersona().getApellido() + " | Precio final: $" + p.calcularPrecioFinal());
+                System.out.println("Plato a cocinar: " + p.getPlato().getNombre() + " | Para: " + p.getPersonaEducativa().getNombre() + " " + p.getPersonaEducativa().getApellido() + " | Precio final: $" + p.calcularPrecioFinal());
             }
         }
     }
@@ -116,7 +116,7 @@ public class Buffet {
         System.out.println("-- PEDIDOS PENDIENTES --");
         for (Pedido p : pedido){
             if (!p.getEntregado()){
-                System.out.println(p.getPlato().getNombre() + " | " + p.getPersona().getNombre() + " " + p.getPersona().getApellido());
+                System.out.println(p.getPlato().getNombre() + " | " + p.getPersonaEducativa().getNombre() + " " + p.getPersonaEducativa().getApellido());
             }
         }
     }
@@ -171,8 +171,8 @@ public class Buffet {
         ArrayList<Materia>  listaMaterias1 = new ArrayList<>();
         ArrayList<Materia>  listaMaterias2 = new ArrayList<>();
 
-        Alumno alumno1 = new Alumno("Juan", "Pérez", LocalDate.of(2010, 5, 15), "Estado 604", "5°A", listaNotas1, listaMaterias1);
-        Alumno alumno2 = new Alumno("María", "García", LocalDate.of(2011, 10, 20), "Carabobo 1874", "4°B", listaNotas2, listaMaterias2);
+        Alumno alumno1 = new Alumno("Juan", "Pérez", LocalDate.of(2010, 5, 15), "Estado 604", 0.00, "5°A", listaNotas1, listaMaterias1);
+        Alumno alumno2 = new Alumno("María", "García", LocalDate.of(2011, 10, 20), "Carabobo 1874", 0.00, "4°B", listaNotas2, listaMaterias2);
 
         Profesor profesor1 = new Profesor("Martin", "Barbieri", LocalDate.of(2003, 1, 1), "Libertador 1881", 15.5);
         Profesor profesor2 = new Profesor("Franco", "Callipo", LocalDate.of(2003, 2, 2), "Carabobo 1874", 10);

@@ -3,13 +3,13 @@ import colegio.Materia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Alumno extends Persona {
+public class Alumno extends PersonaEducativa {
     private String division;
     private ArrayList<Float> listaNotas;
     private ArrayList<Materia> listaMaterias;
 
-    public Alumno(String nombre, String apellido, LocalDate fecha, String direccion, String division, ArrayList<Float> listaNotas, ArrayList<Materia> listaMaterias) {
-        super(nombre, apellido, fecha, direccion);
+    public Alumno(String nombre, String apellido, LocalDate fecha, String direccion, double descuento, String division, ArrayList<Float> listaNotas, ArrayList<Materia> listaMaterias) {
+        super(nombre, apellido, fecha, direccion, descuento);
         this.division = division;
         this.listaNotas = listaNotas;
         this.listaMaterias = listaMaterias;
